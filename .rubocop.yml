@@ -3,7 +3,7 @@ Metrics/LineLength:
   StyleGuide: '#80-character-limits'
   Enabled: false
 
-Style/UnneededPercentQ:
-  Description: 'Checks for %q/%Q when single quotes or double quotes would do.'
-  StyleGuide: '#percent-q'
+Style/StringLiterals:
+  Description: 'Checks if uses of quotes match the configured preference.'
+  StyleGuide: '#consistent-string-literals'
   Enabled: false
