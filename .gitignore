@@ -10,6 +10,12 @@
 # Ignore rubymine config.
 /.idea
 
+# Ignore hound config.
+/.hound.yml
+
+# Ignore rubocop config.
+.rubocop.yml
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-*

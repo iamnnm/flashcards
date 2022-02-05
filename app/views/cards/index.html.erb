@@ -1,0 +1,11 @@
+<% @cards.each_slice(4) do |set_cards| %>
+  <div class="row align-items-start">
+    <% set_cards.each do |card| %>
+      <ul class="list-group col-3 p-3">
+        <li class="list-group-item"><%= card.original_text %></li>
+        <li class="list-group-item"><%= card.translated_text %></li>
+        <li class="list-group-item"><%= card.review_date.strftime("%d/%m/%Y") %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
