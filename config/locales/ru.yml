@@ -1,0 +1,10 @@
+ru:
+  layouts:
+    application:
+        title: "Флешкарточкер"
+        logo:  "Флешкарточкер"
+        button_all_cards: "Все карточки"
+        button_add_cards: "Добавить карточку"
+  home:
+    index:
+      slogan: "Первый в мире удобный менеджер флеш-карточек. Именно так."
