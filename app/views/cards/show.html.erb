@@ -1,0 +1,16 @@
+<section class="d-flex justify-content-center">
+  <section class="col-8">
+    <ul class="list-group p-3 pb-2">
+      <li class="list-group-item"><%= @card.original_text %></li>
+      <li class="list-group-item"><%= @card.translated_text %></li>
+      <li class="list-group-item"><%= @card.review_date.strftime("%d/%m/%Y") %></li>
+    </ul>
+    <div class="d-flex justify-content-center">
+      <div class="btn-group p-3 pt-0 col-9" role="group">
+        <%= link_to t('global.forms.buttons.edit'), edit_card_path(@card), class: 'btn btn-outline-success col-3' %>
+        <%= link_to t('global.forms.buttons.delete'), card_path(@card), class: 'btn btn-outline-danger col-3', method: :delete %>
+        <%= link_to t('global.forms.buttons.back_to_list'), cards_path, class: 'btn btn-outline-success col-3' %>
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,11 +1,17 @@
-<% @cards.each_slice(4) do |set_cards| %>
+<% @cards.each_slice(3) do |set_cards| %>
   <div class="row align-items-start">
     <% set_cards.each do |card| %>
-      <ul class="list-group col-3 p-3">
-        <li class="list-group-item"><%= card.original_text %></li>
-        <li class="list-group-item"><%= card.translated_text %></li>
-        <li class="list-group-item"><%= card.review_date.strftime("%d/%m/%Y") %></li>
-      </ul>
+      <section class="col-4">
+        <ul class="list-group p-3 pb-2">
+          <li class="list-group-item"><%= card.original_text %></li>
+          <li class="list-group-item"><%= card.translated_text %></li>
+          <li class="list-group-item"><%= card.review_date.strftime("%d/%m/%Y") %></li>
+        </ul>
+        <div class="btn-group p-3 pt-0 col-12" role="group">
+          <%= link_to t('global.forms.buttons.edit'), edit_card_path(card), class: 'btn btn-outline-success col-6' %>
+          <%= link_to t('global.forms.buttons.delete'), card_path(card), class: 'btn btn-outline-danger col-6', method: :delete %>
+        </div>
+      </section>
     <% end %>
   </div>
 <% end %>
