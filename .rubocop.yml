@@ -21,3 +21,47 @@ Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
+
+Style/DateTime:
+  Description: 'Use Date or Time over DateTime.'
+  StyleGuide: '#date--time'
+  Enabled: false
+
+Metrics/BlockLength:
+  Description: 'Avoid long blocks with many lines.'
+  Enabled: false
+
+Style/Lambda:
+  Description: 'Use the new lambda literal syntax for single-line blocks.'
+  StyleGuide: '#lambda-multi-line'
+  Enabled: false
+
+Lint/UnusedBlockArgument:
+  Description: 'Checks for unused block arguments.'
+  StyleGuide: '#underscore-unused-vars'
+  Enabled: false
+
+Layout/EmptyLines:
+  Description: "Don't use several empty lines in a row."
+  StyleGuide: '#two-or-more-empty-lines'
+  Enabled: false
+
+Layout/AlignHash:
+  Description: >-
+    Align the elements of a hash literal if they span more than
+    one line.
+  Enabled: false
+
+Bundler/OrderedGems:
+  Description: >-
+    Gems within groups in the Gemfile should be alphabetically sorted.
+  Enabled: false
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+
+Style/GuardClause:
+  Description: 'Check for conditionals that can be replaced with guard clauses'
+  StyleGuide: '#no-nested-conditionals'
+  Enabled: false
