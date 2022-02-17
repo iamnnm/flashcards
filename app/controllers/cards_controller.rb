@@ -22,7 +22,6 @@ class CardsController < ApplicationController
       redirect_to @card, notice: I18n.t('controllers.notices.create')
     else
       render :new, status: :unprocessable_entity
-      # debugger
     end
   end
 

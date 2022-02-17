@@ -8,7 +8,7 @@ class CreateUpdateCard
 
   private
 
-  def set_or_update_review_date(obj)
+  def create_or_update_review_date(obj)
     if obj.class == ActionController::Parameters
       card = Card.new(obj)
       card.assign_attributes(review_date: DateTime.now)
