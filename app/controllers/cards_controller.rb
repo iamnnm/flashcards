@@ -16,18 +16,21 @@ class CardsController < ApplicationController
   def edit; end
 
   def create
-    @card = Card.new(card_params)
+    @card = CreateUpdateCard.new.call(card_params)
 
     if @card.save
-      redirect_to @card
+      redirect_to @card, notice: I18n.t('controllers.notices.create')
     else
       render :new, status: :unprocessable_entity
+      # debugger
     end
   end
 
   def update
+    @card = CreateUpdateCard.new.call(@card)
+
     if @card.update(card_params)
-      redirect_to @card
+      redirect_to @card, notice: I18n.t('controllers.notices.update')
     else
       render :edit, status: :unprocessable_entity
     end

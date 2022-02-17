@@ -1,17 +1,4 @@
 <%= simple_form_for card do |f| %>
-  <% if card.errors.any? %>
-    <section class="alert alert-danger">
-      <h2>
-        <%= t 'global.forms.messages.errors', count: card.errors.count %>
-      </h2>
-      <ul>
-        <% card.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </section>
-  <% end %>
-
   <%= f.input :original_text %>
   <%= f.input :translated_text %>
   <%= f.submit class: 'btn btn-success mt-2' %>

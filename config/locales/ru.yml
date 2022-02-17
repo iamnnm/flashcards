@@ -32,5 +32,11 @@ ru:
     index:
       slogan: "Первый в мире удобный менеджер флеш-карточек. Именно так."
   errors:
+    format: "%{attribute} %{message}"
     messages:
-      original_and_translated_text: "не могут быть одинаковыми"
+      similar_with_translated_text: "не может быть одинаковым с переводом"
+      similar_with_original_text: "не могут быть одинаковым с оригиналом"
+  controllers:
+    notices:
+      create: "Карточка успешно создана!"
+      update: "Карточка успешно обновлена!"

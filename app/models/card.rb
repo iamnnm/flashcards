@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class Card < ApplicationRecord
-  before_validation :set_or_update_review_date
-
   validates :original_text, presence: true, length: { maximum: 11 }
   validates :translated_text, presence: true
   validates :review_date, presence: true
@@ -10,18 +8,16 @@ class Card < ApplicationRecord
 
   private
 
-  # Adding a date of creation or renewed date of changing cards info
-  def set_or_update_review_date
-    self.review_date = if review_date.nil?
-                         DateTime.now
-                       else
-                         review_date.next_day(3)
-                       end
-  end
-
   def original_and_translated_texts_cannot_be_similar
+    # errors.add(:original_and_translated_text,
+    #            I18n.t('errors.messages.original_and_translated_text')) if original_text == translated_text
+    #
+    # errors.add [:original_text, :translated_text], :similar if original_text == translated_text
     if original_text == translated_text
-      errors.add(:original_and_translated_text, I18n.t('errors.messages.original_and_translated_text'))
+      errors.add :original_text, :similar_with_translated_text
+      errors.add :translated_text, :similar_with_original_text
     end
+
+    # debugger
   end
 end
