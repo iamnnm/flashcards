@@ -16,7 +16,7 @@ class CardsController < ApplicationController
   def edit; end
 
   def create
-    @card = CreateUpdateCard.new.call(card_params)
+    @card = CreateCardDate.new.call(card_params)
 
     if @card.save
       redirect_to @card, notice: I18n.t('controllers.notices.create')
