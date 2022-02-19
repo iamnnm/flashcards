@@ -2,7 +2,7 @@
 
 class CreateCard < BaseCard
   def call(card_params)
-    card = Card.new(card_params)
-    assign_a_date(card, DateTime.now)
+    card_params.merge!(review_date: DateTime.now)
+    assign_a_date(card_params)
   end
 end
