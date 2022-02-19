@@ -27,7 +27,7 @@ class CardsController < ApplicationController
 
   def update
     @card = UpdateCard.new(params[:id]).call(card_params)
-    # debugger
+
     if @card.update(card_params)
       redirect_to @card, notice: I18n.t('controllers.notices.update')
     else
