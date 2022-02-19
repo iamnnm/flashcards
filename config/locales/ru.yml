@@ -1,4 +1,27 @@
 ru:
+  helpers:
+    submit:
+      create: "Cоздать"
+      update: "Сохранить"
+  activerecord:
+    attributes:
+      card:
+        original_text: "Исходный текст"
+        translated_text: "Перевод"
+        original_and_translated_text: "Оригинал и перевод"
+  global:
+    forms:
+      buttons:
+        edit: "Редактировать"
+        delete: "Удалить"
+        back: "Назад"
+        back_to_list: "Вернуться к списку"
+      messages:
+        errors:
+          one: "Не удалось созранить карточку! Найдена одна ошибка:"
+          few: "Не удалось созранить карточку! Найдены %{count} ошибки:"
+          many: "Не удалось созранить карточку! Найдено %{count} ошибок:"
+          other: "Не удалось созранить карточку! Найдена %{count} ошибка:"
   layouts:
     application:
         title: "Флешкарточкер"
@@ -8,3 +31,12 @@ ru:
   home:
     index:
       slogan: "Первый в мире удобный менеджер флеш-карточек. Именно так."
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      similar_with_translated_text: "не может быть одинаковым с переводом"
+      similar_with_original_text: "не могут быть одинаковым с оригиналом"
+  controllers:
+    notices:
+      create: "Карточка успешно создана!"
+      update: "Карточка успешно обновлена!"

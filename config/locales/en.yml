@@ -1,4 +1,19 @@
 en:
+  helpers:
+    submit:
+      create: "Create"
+      update: "Save"
+  global:
+    forms:
+      buttons:
+        edit: "Edit"
+        delete: "Delete"
+        back: "Back"
+        back_to_list: "Back to list"
+      messages:
+        errors:
+          one: "One error prohibited this feedback from being saved"
+          other: "%{count} errors prohibited this feedback from being saved"
   layouts:
     application:
       title: "Flashcarder"
@@ -8,3 +23,11 @@ en:
   home:
     index:
       slogan: "First around the world manager flesh-cards. That's it."
+  errors:
+    messages:
+      similar_with_translated_text: "cannot be similar with translated text"
+      similar_with_original_text: "cannot be similar with original text"
+  controllers:
+    notice:
+      create: "Card successfully created!"
+      update: "Card successfully updated!"
