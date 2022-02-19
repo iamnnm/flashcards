@@ -1,9 +1,7 @@
 #  frozen_string_literal: true
 
 class BaseCard
-  attr_reader :id
-
-  def initialize(id=nil)
+  def initialize(id = nil)
     @card = if id.nil?
               Card.new
             else
