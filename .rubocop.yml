@@ -65,3 +65,8 @@ Style/GuardClause:
   Description: 'Check for conditionals that can be replaced with guard clauses'
   StyleGuide: '#no-nested-conditionals'
   Enabled: false
+
+  Layout/EndOfLine:
+    Description: 'Use Unix-style line endings.'
+    StyleGuide: '#crlf'
+    Enabled: false
