@@ -1,12 +1,6 @@
 #  frozen_string_literal: true
 
-class BaseCard < ApplicationService
-  attr_reader :params
-
-  def initialize(params)
-    @params = params
-  end
-
+class BaseCard
   private
 
   def assign_a_date(card, date)

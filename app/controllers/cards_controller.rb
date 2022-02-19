@@ -16,7 +16,7 @@ class CardsController < ApplicationController
   def edit; end
 
   def create
-    @card = CreateCard.call(card_params)
+    @card = CreateCard.new.call(card_params)
 
     if @card.save
       redirect_to @card, notice: I18n.t('controllers.notices.create')
@@ -26,8 +26,8 @@ class CardsController < ApplicationController
   end
 
   def update
-    @card = UpdateCard.call(card_params.merge(id: params[:id]))
-
+    @card = UpdateCard.new(params[:id]).call(card_params)
+    # debugger
     if @card.update(card_params)
       redirect_to @card, notice: I18n.t('controllers.notices.update')
     else
