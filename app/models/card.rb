@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Card < ApplicationRecord
-  validates :original_text, presence: true, length: { maximum: 11 }
+  validates :original_text, presence: true
   validates :translated_text, presence: true
   validates :review_date, presence: true
   validate :original_and_translated_texts_cannot_be_similar
