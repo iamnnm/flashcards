@@ -75,3 +75,4 @@ end
 gem 'rails-i18n'
 gem 'simple_form'
 gem 'jquery-rails'
+gem 'nokogiri'

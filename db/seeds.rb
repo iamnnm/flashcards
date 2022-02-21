@@ -1,18 +1,16 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+# frozen_string_literal: true
 
-Card.create!(original_text: 'Home', translated_text: 'Дом', review_date: DateTime.now)
-Card.create!(original_text: 'Car', translated_text: 'Машина', review_date: DateTime.now)
-Card.create!(original_text: 'Road', translated_text: 'Дорога', review_date: DateTime.now)
-Card.create!(original_text: 'Table', translated_text: 'Таблица', review_date: DateTime.now)
-Card.create!(original_text: 'Fox', translated_text: 'Лиса', review_date: DateTime.now)
-Card.create!(original_text: 'Fist', translated_text: 'Кулак', review_date: DateTime.now)
-Card.create!(original_text: 'Spoon', translated_text: 'Ложка', review_date: DateTime.now)
-Card.create!(original_text: 'Axe', translated_text: 'Топор', review_date: DateTime.now)
-Card.create!(original_text: 'Fire', translated_text: 'Пожар', review_date: DateTime.now)
-Card.create!(original_text: 'Tall', translated_text: 'Высокий', review_date: DateTime.now)
+require 'open-uri'
+
+url = "https://filworld.ru/samye-nuzhnye-anglijskie-slova/"
+page = Nokogiri::HTML(URI.open(url))
+page = page.xpath("//strong[contains(text(), '100 САМЫХ ПОПУЛЯРНЫХ СЛОВ')]/../following-sibling::p/text()")
+
+page = page.map do |str|
+  [str.text.slice(/[a-zA-Z]+/),
+   str.text.slice(/(?<=-|–|—)\D+/)]
+end
+
+page.each do |item|
+  Card.create!(original_text: item[0], translated_text: item[1], review_date: DateTime.now)
+end
